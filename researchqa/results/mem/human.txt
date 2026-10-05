@@ -1,0 +1,48 @@
+Generalized linear mixed model fit by maximum likelihood (Laplace
+  Approximation) [glmerMod]
+ Family: binomial  ( logit )
+Formula: vote ~ RL + RC + CC + CD + CM + (1 | field)
+   Data: data
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+    173.9     195.8     -79.9     159.9       162 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7023 -0.5051 -0.1666  0.4953  2.8941 
+
+Random effects:
+ Groups Name        Variance Std.Dev.
+ field  (Intercept) 0.518    0.7197  
+Number of obs: 169, groups:  field, 8
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -0.26674    0.34386  -0.776  0.43792    
+RL           1.40908    0.32829   4.292 1.77e-05 ***
+RC          -0.01461    0.28371  -0.051  0.95894    
+CC          -0.42556    0.22700  -1.875  0.06084 .  
+CD           0.76697    0.24194   3.170  0.00152 ** 
+CM          -0.66376    0.25025  -2.652  0.00799 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+   (Intr) RL     RC     CC     CD    
+RL -0.042                            
+RC -0.004 -0.559                     
+CC  0.052  0.232 -0.233              
+CD -0.061  0.058  0.111 -0.171       
+CM  0.032 -0.174 -0.052 -0.130 -0.315
+
+Variance inflation factors:
+      RL       RC       CC       CD       CM 
+1.576052 1.551528 1.143730 1.182942 1.201379 
+
+Average marginal effects (percentage points):
+          Predictor Delta Win Rate           95% CI      p
+     Citation Count        -6.47 *  [-12.88, -0.05]  0.048
+ Citation Diversity     +11.65 ***  [+5.31, +17.99] <0.001
+  Citation Mismatch      -10.08 **  [-17.01, -3.15]  0.004
+   Response Content         -0.22    [-8.66, +8.22]  0.959
+    Response Length     +21.41 *** [+13.86, +28.96] <0.001

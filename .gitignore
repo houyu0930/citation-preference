@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Secrets
+.env
+
+# Upstream ResearchQA data (download it, see researchqa/data/upstream/README.md)
+researchqa/data/upstream/*
+!researchqa/data/upstream/README.md
+
+# Cached model fits (large; sciarena/mem.R refits them)
+sciarena/results/mem/fits/
+
+# Local figures and plotting code (not part of the public release)
+/figures/
+/scripts/
+
+.DS_Store

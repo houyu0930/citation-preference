@@ -1,0 +1,62 @@
+Generalized linear mixed model fit by maximum likelihood (Adaptive
+  Gauss-Hermite Quadrature, nAGQ = 0) [glmerMod]
+ Family: binomial  ( logit )
+Formula: vote ~ RL + CD + CC + CA + RC + order + (1 | MA) + (1 | MB) +  
+    (1 | MA:Qtype) + (1 | MB:Qcat) + (RL + CD + CC + CA || MAB) +  
+    (RL + CD + CC + RC || Qsubj) + (RL + CD + CC + RC || Qtype) +      RL:CD
+   Data: data
+Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  15379.5   15598.4   -7662.8   15325.5     24471 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-10.714  -0.313  -0.095   0.239  60.922 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ MAB      CA          0.015319 0.12377 
+ MAB.1    CC          0.090634 0.30106 
+ MAB.2    CD          0.010567 0.10280 
+ MAB.3    RL          0.145417 0.38134 
+ MAB.4    (Intercept) 0.025113 0.15847 
+ MA.Qtype (Intercept) 0.013413 0.11581 
+ MB.Qcat  (Intercept) 0.024040 0.15505 
+ Qsubj    RC          0.019677 0.14028 
+ Qsubj.1  CC          0.004683 0.06843 
+ Qsubj.2  CD          0.009312 0.09650 
+ Qsubj.3  RL          0.002960 0.05440 
+ Qsubj.4  (Intercept) 0.025951 0.16109 
+ MB       (Intercept) 1.665705 1.29062 
+ MA       (Intercept) 1.273927 1.12868 
+ Qtype    RC          0.040900 0.20224 
+ Qtype.1  CC          0.007572 0.08702 
+ Qtype.2  CD          0.013489 0.11614 
+ Qtype.3  RL          0.006715 0.08195 
+ Qtype.4  (Intercept) 0.020207 0.14215 
+Number of obs: 24498, groups:  
+MAB, 488; MA:Qtype, 138; MB:Qcat, 115; Qsubj, 25; MB, 23; MA, 23; Qtype, 6
+
+Fixed effects:
+              Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -1.563850   0.367381  -4.257 2.07e-05 ***
+RL            0.832797   0.060285  13.814  < 2e-16 ***
+CD            0.388899   0.067654   5.748 9.01e-09 ***
+CC            0.106249   0.063631   1.670    0.095 .  
+CA           -0.027568   0.023153  -1.191    0.234    
+RC            1.016242   0.102575   9.907  < 2e-16 ***
+orderb_first -0.017475   0.043171  -0.405    0.686    
+RL:CD        -0.009797   0.027811  -0.352    0.725    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) RL     CD     CC     CA     RC     ordrb_
+RL          -0.011                                          
+CD          -0.005 -0.008                                   
+CC          -0.003 -0.135 -0.245                            
+CA           0.001 -0.005 -0.013  0.013                     
+RC          -0.013 -0.140 -0.005  0.056  0.000              
+orderb_frst -0.059  0.007  0.001  0.001  0.000 -0.004       
+RL:CD       -0.002 -0.044 -0.075 -0.017 -0.003 -0.006 -0.008

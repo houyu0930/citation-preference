@@ -1,0 +1,9 @@
+Model selection: researchqa, skywork judge, starting from the maximal structure
+Fixed effects: vote ~ RL + RC + CC + CD + CM + order
+Start: AIC 194.1, singular (0.0 min)
+  (1 | field)
+singular; dropped (1 | field): AIC 192.1
+
+Selected (AIC 192.1):
+  vote ~ RL + RC + CC + CD + CM + order
+Same random effects as the final model in the paper: yes

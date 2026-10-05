@@ -1,0 +1,10 @@
+Model selection: researchqa, human judge, starting from the maximal structure
+Fixed effects: vote ~ RL + RC + CC + CD + CM
+Start: AIC 173.9 (0.0 min)
+  (1 | field)
+Current AIC 173.9; AIC after removing each term:
+       174.8  (1 | field)
+
+Selected (AIC 173.9):
+  vote ~ RL + RC + CC + CD + CM + (1 | field)
+Same random effects as the final model in the paper: yes

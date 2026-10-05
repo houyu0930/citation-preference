@@ -1,0 +1,9 @@
+Model selection: researchqa, qwen judge, starting from the maximal structure
+Fixed effects: vote ~ RL + RC + CC + CD + CM + order
+Start: AIC 333.0, singular (0.0 min)
+  (1 | field)
+singular; dropped (1 | field): AIC 331.0
+
+Selected (AIC 331.0):
+  vote ~ RL + RC + CC + CD + CM + order
+Same random effects as the final model in the paper: yes

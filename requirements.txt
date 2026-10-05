@@ -1,0 +1,18 @@
+# Python >= 3.10
+
+# Analysis
+numpy>=2.0
+pandas>=2.0
+scipy>=1.11
+
+# Predictors
+datasets>=3.0
+nltk>=3.9
+bert-score==0.3.13
+torch>=2.0
+transformers>=4.40
+tqdm
+
+# LLM-judge client (the vLLM server is installed separately, see README)
+openai>=1.0
+requests

@@ -1,0 +1,59 @@
+Generalized linear mixed model fit by maximum likelihood (Adaptive
+  Gauss-Hermite Quadrature, nAGQ = 0) [glmerMod]
+ Family: binomial  ( logit )
+Formula: 
+vote ~ RL + CD + CC + CA + RC + (1 | MA) + (1 | MB) + (1 | MB:Qtype) +  
+    (1 | MA:Qcat) + (1 | MB:Qcat) + (RL + CD + CA + RC || MAB) +  
+    (0 + RL + CC + CA + RC || Qsubj) + (CD + RC || Qtype) + RL:CD
+   Data: data
+Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  15772.2   15950.1   -7862.1   15724.2     12225 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.8596 -0.8791 -0.3951  0.8796  6.0282 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ MAB      RC          0.0089585 0.09465 
+ MAB.1    CA          0.0027994 0.05291 
+ MAB.2    CD          0.0145518 0.12063 
+ MAB.3    RL          0.0405219 0.20130 
+ MAB.4    (Intercept) 0.0569517 0.23865 
+ MB.Qtype (Intercept) 0.0020309 0.04507 
+ MB.Qcat  (Intercept) 0.0192476 0.13874 
+ MA.Qcat  (Intercept) 0.0063190 0.07949 
+ Qsubj    RC          0.0332891 0.18245 
+ Qsubj.1  CA          0.0002774 0.01666 
+ Qsubj.2  CC          0.0010303 0.03210 
+ Qsubj.3  RL          0.0129398 0.11375 
+ MB       (Intercept) 0.1291543 0.35938 
+ MA       (Intercept) 0.1416204 0.37632 
+ Qtype    RC          0.0074161 0.08612 
+ Qtype.1  CD          0.0005454 0.02335 
+ Qtype.2  (Intercept) 0.0002357 0.01535 
+Number of obs: 12249, groups:  
+MAB, 480; MB:Qtype, 138; MB:Qcat, 115; MA:Qcat, 115; Qsubj, 25; MB, 23; MA, 23; Qtype, 6
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -0.03080    0.11330  -0.272 0.785747    
+RL          -0.04960    0.04549  -1.090 0.275617    
+CD           0.07211    0.03562   2.024 0.042930 *  
+CC          -0.14336    0.03719  -3.854 0.000116 ***
+CA           0.02685    0.02046   1.312 0.189445    
+RC           0.17035    0.06701   2.542 0.011014 *  
+RL:CD       -0.01152    0.02042  -0.564 0.572828    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+      (Intr) RL     CD     CC     CA     RC    
+RL     0.001                                   
+CD    -0.001 -0.054                            
+CC     0.002 -0.205 -0.502                     
+CA    -0.001 -0.004 -0.019  0.010              
+RC    -0.001 -0.264 -0.030  0.086  0.005       
+RL:CD -0.030  0.033  0.002  0.001 -0.004 -0.001

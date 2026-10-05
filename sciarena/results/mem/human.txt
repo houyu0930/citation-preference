@@ -1,0 +1,71 @@
+Generalized linear mixed model fit by maximum likelihood (Adaptive
+  Gauss-Hermite Quadrature, nAGQ = 0) [glmerMod]
+ Family: binomial  ( logit )
+Formula: 
+vote ~ RL + CD + CC + CA + RC + (1 | MA) + (1 | MB) + (1 | MB:Qtype) +  
+    (1 | MA:Qcat) + (1 | MB:Qcat) + (RL + CD + CA + RC || MAB) +  
+    (0 + RL + CC + CA + RC || Qsubj) + (CD + RC || Qtype)
+   Data: data
+Control: glmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+05))
+
+      AIC       BIC    logLik -2*log(L)  df.resid 
+  15770.6   15941.1   -7862.3   15724.6     12226 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.8729 -0.8780 -0.3967  0.8798  6.1216 
+
+Random effects:
+ Groups   Name        Variance  Std.Dev.
+ MAB      RC          0.0092895 0.09638 
+ MAB.1    CA          0.0027544 0.05248 
+ MAB.2    CD          0.0144022 0.12001 
+ MAB.3    RL          0.0398232 0.19956 
+ MAB.4    (Intercept) 0.0569789 0.23870 
+ MB.Qtype (Intercept) 0.0020380 0.04514 
+ MB.Qcat  (Intercept) 0.0192075 0.13859 
+ MA.Qcat  (Intercept) 0.0063846 0.07990 
+ Qsubj    RC          0.0332788 0.18242 
+ Qsubj.1  CA          0.0003122 0.01767 
+ Qsubj.2  CC          0.0009952 0.03155 
+ Qsubj.3  RL          0.0127228 0.11280 
+ MB       (Intercept) 0.1296210 0.36003 
+ MA       (Intercept) 0.1416060 0.37631 
+ Qtype    RC          0.0074871 0.08653 
+ Qtype.1  CD          0.0005281 0.02298 
+ Qtype.2  (Intercept) 0.0002277 0.01509 
+Number of obs: 12249, groups:  
+MAB, 480; MB:Qtype, 138; MB:Qcat, 115; MA:Qcat, 115; Qsubj, 25; MB, 23; MA, 23; Qtype, 6
+
+Fixed effects:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept) -0.03275    0.11333  -0.289 0.772607    
+RL          -0.04869    0.04533  -1.074 0.282775    
+CD           0.07206    0.03555   2.027 0.042682 *  
+CC          -0.14329    0.03715  -3.857 0.000115 ***
+CA           0.02670    0.02051   1.301 0.193109    
+RC           0.17022    0.06711   2.537 0.011197 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+   (Intr) RL     CD     CC     CA    
+RL  0.002                            
+CD -0.001 -0.054                     
+CC  0.002 -0.206 -0.504              
+CA -0.001 -0.004 -0.019  0.010       
+RC -0.001 -0.265 -0.030  0.086  0.005
+
+Variance inflation factors:
+      RL       CD       CC       CA       RC 
+1.157507 1.390193 1.445929 1.000407 1.077668 
+
+Average marginal effects (percentage points):
+          Predictor Delta Win Rate         95% CI      p
+ Citation Diversity        +1.78 * [+0.06, +3.51]  0.043
+     Citation Count      -3.55 *** [-5.34, -1.75] <0.001
+       Citation Age         +0.66  [-0.33, +1.66]  0.193
+    Response Length         -1.21  [-3.40, +0.99]  0.283
+   Response Content        +4.21 * [+1.00, +7.43]  0.010
+
+Spearman correlation, random-effect vs. Elo ranking (23 models): 0.92

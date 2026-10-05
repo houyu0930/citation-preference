@@ -1,0 +1,25 @@
+
+Call:
+glm(formula = formula, family = binomial(), data = data)
+
+Coefficients:
+                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)        1.16929    0.19234   6.079 1.21e-09 ***
+RL                 0.38802    0.19303   2.010   0.0444 *  
+RC                 0.47809    0.19661   2.432   0.0150 *  
+CC                -0.04393    0.15823  -0.278   0.7813    
+CD                 0.28751    0.15876   1.811   0.0701 .  
+CM                 0.02899    0.13775   0.210   0.8333    
+ordergemini_first -2.95928    0.30993  -9.548  < 2e-16 ***
+RL:CD             -0.02595    0.13039  -0.199   0.8423    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 465.53  on 337  degrees of freedom
+Residual deviance: 316.94  on 330  degrees of freedom
+AIC: 332.94
+
+Number of Fisher Scoring iterations: 5
+
